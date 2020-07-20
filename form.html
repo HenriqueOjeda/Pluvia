@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PSQTBGK');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="codepixer">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <link rel="stylesheet" href="form.css">
+    <title>Pluvia</title>
+
+<body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSQTBGK"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+
+
+
+    <form id="myform">
+        <header>Shipping Order Form</header>
+        <div class="area">
+        <div class="row">
+            <div class="col2">
+            <input type="text" name="firstname">
+            <label for="fistname">Nome</label>
+            </div>
+            <div class="col2">
+            <input type="text" name="lastname">
+            <label for="lastname">Sobrenome</label>
+            </div>
+        </div>
+        <div class="row">
+            <input type="text" name="phone" id="phone">
+            <label for="phone">Telefone</label>
+        </div>
+        <div class="row">
+            <input type="text" name="address" id="address">
+            <label for="address">E-mail</label>
+        </div>
+    
+        </div>
+        <div class="area">
+        <div class="ckeckarea">
+            <input type="checkbox" name="checkbox1" id="checkbox1" onclick="autofilling(this.form)">
+            <label for="checkbox1">Check this box if order info and sending info are the same.</label>
+        </div>
+        <div class="row">
+            <div class="col2">
+            <input type="text" name="newfirstname">
+            <label for="newfistname">First Name</label>
+            </div>
+            <div class="col2">
+            <input type="text" name="newlastname">
+            <label for="newlastname">Last Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <input type="text" name="newaddress" id="newaddress">
+            <label for="newaddress">Sending Address</label>
+        </div>
+        </div>
+        <div class="row">
+        <input type="submit" value="Submit" class="btn">
+        <input type="submit" value="cancel" class="btn">
+        </div>
+    </form>
+</body>
+
+<!-- ------------------------------- javascript -->
+
+  <script>
+  function autofilling(f) {
+  if ($("#checkbox1").prop("checked")) {
+    f.newfirstname.value = f.firstname.value;
+    f.newlastname.value = f.lastname.value;
+    f.newaddress.value = f.address.value;
+  } else {
+    f.newfirstname = '';
+    f.newlastname = '';
+    f.newaddress = '';
+  }
+}
+
+$("#checkbox1").click(function() {
+  if ($("#checkbox1").prop("checked")) {
+    autofilling();
+  }
+});
+</script>
